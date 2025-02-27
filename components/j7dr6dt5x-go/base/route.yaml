@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: j7dr6dt5x-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: j7dr6dt5x-go 
+  name: j7dr6dt5x-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: j7dr6dt5x-go
+    weight: 100 
